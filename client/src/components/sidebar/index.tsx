@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import { Archive, CircleDollarSign, Clipboard, Layout, LucideIcon, MenuIcon, SlidersHorizontal, User } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 
 type Props = {
     href: string;
@@ -43,7 +44,7 @@ export const SideBar = () => {
     const toogleSidebar = () => {
         dispatch(setIsSidebarCollapsed(!isSidebarCollapsed))
     };
-   
+
 
     const sidebarClassNames = `fixed flex flex-col ${isSidebarCollapsed ? "w-0 md:w-16" : "w-72 md:w-64"} 
         bg-white transition-all duration-300 overflow-hidden h-full shadow-md z-40`;
@@ -54,7 +55,13 @@ export const SideBar = () => {
             <div className={cn("flex gap-3 justify-between md:justify-normal items-center pt-8",
                 isSidebarCollapsed ? "px-5" : "px-8"
             )}>
-                <div>logo</div>
+                <Image
+                    src="https://s3-inventoryy-management.s3.us-east-1.amazonaws.com/logo.png"
+                    alt="sdstock-logo"
+                    width={27}
+                    height={27}
+                    className="rounded w-8"
+                />
 
                 <h1 className={cn("font-extrabold text-2xl",
                     isSidebarCollapsed ? "hidden" : "block"
