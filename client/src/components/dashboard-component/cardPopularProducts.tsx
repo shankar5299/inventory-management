@@ -20,7 +20,7 @@ const CardPopularProducts = () => {
               <div key={product.productId} className='flex items-center  justify-between gap-3 px-5 py-7 border-b'>
                 <div className='flex items-center gap-3'>
                   <Image
-                    src={`https://s3-inventoryy-management.s3.us-east-1.amazonaws.com/products/${Math.floor(Math.random() * 3) * 1}.png`}
+                    src={`https://s3-inventoryy-management.s3.us-east-1.amazonaws.com/products/${Math.floor(Math.random() * 3) + 1}.png`}
                     alt={product.name}
                     width={48}
                     height={48}
